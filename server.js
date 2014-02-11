@@ -1,5 +1,10 @@
 'use strict';
 
+var repowatcher = require('./lib/repowatcher');
+repowatcher.init('git@github.com:picmonkey/picmonkey.git',
+                 'rake launch',
+                 ['master', 'production']).watch()
+
 var express = require('express');
 
 /**
