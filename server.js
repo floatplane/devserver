@@ -1,9 +1,13 @@
 'use strict';
 
 var repowatcher = require('./lib/repowatcher');
-repowatcher.init('git@github.com:picmonkey/picmonkey.git',
-                 'rake launch',
-                 ['master', 'production']).watch()
+repowatcher.watch('git@github.com:picmonkey/Jitter.git', // 'git@github.com:picmonkey/picmonkey.git',
+                  'rake launch',
+                  ['master', 'production']);
+repowatcher.ready(function() {
+    // Add routes
+    console.log('server.js: repo ready');
+})
 
 var express = require('express');
 
