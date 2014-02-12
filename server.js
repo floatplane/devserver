@@ -1,7 +1,8 @@
 'use strict';
 
 var repowatcher = require('./lib/repowatcher');
-repowatcher.watch('git@github.com:picmonkey/Jitter.git', // 'git@github.com:picmonkey/picmonkey.git',
+repowatcher.watch('git@github.com:picmonkey/picmonkey.git',
+                  'rake',
                   'rake launch',
                   ['master', 'production']);
 repowatcher.ready(function() {
